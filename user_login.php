@@ -7,10 +7,10 @@ if (isset($_SESSION['username'])) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $username = $conn->real_escape_string($_POST['username']);
+    $username = $connection->real_escape_string($_POST['username']);
     $password = $_POST['password'];
     $sql = "SELECT * FROM users WHERE username = '$username'";
-    $result = $conn->query($sql);
+    $result = $connection->query($sql);
 
     if ($result->num_rows > 0) {
         $user = $result->fetch_assoc();
