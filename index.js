@@ -15,6 +15,23 @@ window.onload = function () {
   if (savedTheme === "dark") {
       document.body.classList.add("dark-mode");
   }
+
+  // Fetch existing job postings
+  fetch('job_fetch_connection.php')  // Updated file name here
+      .then(response => response.json())
+      .then(jobs => {
+          jobs.forEach(job => {
+              const jobCard = document.createElement('div');
+              jobCard.classList.add('job-card');
+              jobCard.innerHTML = `
+                  <h3>${job.job_title}</h3>
+                  <p>${job.job_description}</p>
+                  <small>Posted on: ${job.time_posted}</small>
+              `;
+              document.getElementById('jobsList').appendChild(jobCard);
+          });
+      })
+      .catch(error => console.error('Error fetching jobs:', error));
 };
 
 document.getElementById("darkModeToggle").addEventListener("click", toggleDarkMode);

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FINANCE PROTOTYPE</title>
     <?php include 'header.php'; ?>
+    <link rel="stylesheet" href="index.css"> <!-- Include your CSS file -->
 </head>
 <body class="light-mode"> 
     <div class="job-posting-container">
@@ -14,7 +15,7 @@
             <textarea name="job_description" placeholder="Job Description" required></textarea>
             <button type="submit">Post Job</button>
         </form>
-        <div id="jobsList" class="jobs-list"></div>
+        <div id="jobsList" class="jobs-list"></div> <!-- Job cards will be inserted here -->
     </div>
     <script src="index.js"></script>
 </body>
