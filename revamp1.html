@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FINANCE PROTOTYPE</title>
+    <link rel="stylesheet" href="revamp1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+    <style>
+    
+    
+    body.dark-mode button {
+  font-size: 14px;
+  background-color: #111; /* Dark background for buttons */
+  border-radius: 20px;
+  color: #fff; /* White text color */
+}
+
+body.dark-mode button:hover {
+  background-color: #333; /* Slightly lighter background on hover */
+}
+
+.dark-mode-toggle{
+
+  font-size: 14px;
+  border:none;
+  padding:8px 8px;
+}
+
+
+.dropdown-column {
+            max-width: 300px;
+            margin: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        .dropdown-column h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #2e7d32; /* Dark Green */
+        }
+
+        .styled-select {
+            width: 100%;
+            padding: 10px 15px;
+            font-size: 16px;
+            border: 2px solid #2e7d32; /* Dark Green Border */
+            border-radius: 5px;
+            background-color: #e8f5e9; /* Light Green Background */
+            color: #2e7d32; /* Dark Green Text */
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            cursor: pointer;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        body.dark-mode .styled-select{
+            background-color: #333;
+        }
+
+     
+
+        .styled-select:hover {
+            border-color: #1b5e20; /* Darker Green on Hover */
+            box-shadow: 0 0 5px rgba(0, 128, 0, 0.3); /* Green Shadow on Hover */
+        }
+
+        .styled-select option {
+            padding: 10px;
+            background-color: #ffffff; /* Option Background */
+            color: #2e7d32; /* Option Text Color */
+        }
+        .styled-select option:hover{
+            background-color: #333;
+
+        }
+
+        select option:hover {
+    background-color: lightgray; /* Choose your desired gray color */
+}
+        .styled-select:focus {
+            outline: none;
+            border-color: #1b5e20; /* Darker Green on Focus */
+            box-shadow: 0 0 5px rgba(0, 128, 0, 0.5); /* Green Shadow on Focus */
+        }
+
+    
+
+    </style>
+</head>
+<body class="light-mode"> <!-- Initially setting light mode -->
+    <div class="top-nav">
+        <ul>
+            <h1 class="logopos">Paradise <br> Hotel</h1><br>
+            <li class="top">
+                <a class="top1" href="maindashboard.php">Home</a>
+                <div class="dropdown">
+                    <div class="dropdown-column">
+                        <h3>Payroll</h3>
+                        <a href="admin/time-and-attendance-home.php">Time and Attendance</a>
+                        <a href="Employee-information/dashboard2.php">Employee Information</a>
+                        <a href="payroll/log-in.php">Payroll Processing</a>
+                    </div>           
+                    <div class="dropdown-column">
+                        <h3>Payroll Settings</h3>
+                        <a href="tax-tables.html">Tax Tables</a>
+                        <a href="overtime-rules.html">Overtime Rules</a>
+                        <a href="payroll-deduction.html">Payroll Deductions</a>
+                        <a href="direct-deposit-settings.html">Direct Deposit Settings</a>
+                    </div>          
+                    <div class="dropdown-column">
+                        <h3>Charts and Graphs</h3>
+                        <a href="#">Revenue Trend</a>
+                        <a href="#">Profit Margin Trend</a>
+                        <a href="#">Cash Flow Chart</a>
+                        <a href="#">Financial Ratios Chart</a>
+                    </div>
+
+                    <div class="dropdown-column">
+                        <h3>Quick Access Links</h3>
+                        <a href="#">Frequently Used Reports</a>
+                        <a href="#">Recent Transactions</a>
+                        <a href="#">Quick Actions</a>
+                    </div>            
+                </div>
+            </li>
+            <li class="top">
+                <a class="top1" href="homeversion2.html">Transactions</a>
+                <div class="dropdown">
+                    <div class="dropdown-column">
+                        <h3>Point of Sale</h3>
+                        <a href="#">Sales Module</a>
+                        <a href="#">Inventory Management</a>
+                        <a href="#">Customer Management</a>
+                        <a href="#">Reporting and Analytics</a>
+                        <a href="#">Integrations</a>
+                    </div>
+                    <div class="dropdown-column">
+                        <h3>Account Recievable</h3>
+                        <a href="#">Customer Master File</a>
+                        <a href="#">Invoice Generation</a>
+                        <a href="#">Aging Reports</a>
+                        <a href="#">Collections Management</a>
+                        <a href="#">Credit Memo Management</a>
+                    </div>
+                    <div class="dropdown-column">
+                        <h3>Account Payable</h3>
+                        <a href="#">Vendor Master File</a>
+                        <a href="#">Purchase Order Processing</a>
+                        <a href="#">Invoice Matching</a>
+                        <a href="#">Disbursement Management</a>
+                        <a href="#">Check Register</a>
+                    </div>
+                    <div class="dropdown-column">
+                        <h3>Inventory</h3>
+                        <a href="#">Item Master File</a>
+                        <a href="#">Stock Transfers</a>
+                        <a href="#">Physical Inventory</a>
+                        <a href="#">Cost of Goods Sold Calculation</a>
+                        <a href="#">Inventory Valuation</a>
+                    </div>
+                </div>
+            </li>
+            <li class = "top">
+                <a class="top1" href="#settings">Settings</a>
+                <div class="dropdown">
+                    <div class="dropdown-column">
+                        <h3>General Settings</h3>
+                        <a href="#">Company Information</a>
+                        <a href="#">Currency Settings</a>
+                        <a href="#">Time Zone Settings</a>
+                    </div>
+                    <div class="dropdown-column">
+                        <h3>User Management</h3>
+                        <a href="#">User Roles</a>
+                        <a href="admin-user-accounts.php">User Accounts</a>
+                        <a href="#">Password Management</a>
+                        <a href="#">User Permissions</a>
+                    </div>
+                    <div class="dropdown-column">
+                        <h3>Chart of Accounts Settings</h3>
+                        <a href="#">Account Structure</a>
+                        <a href="#">Account Types</a>
+                        <a href="#">Account Templates</a>
+                    </div>
+                    <div class="dropdown-column">
+                        <h3>Inventory Settings</h3>
+                        <a href="#">Inventory Valuation Methods</a>
+                        <a href="#">Stock Levels:</a>
+                        <a href="#">Reorder Points</a>
+                    </div>
+            </li>
+        </ul>
+
+        <!-- <button type="button" id="darkModeToggle" class="dark-mode-toggle">Dark Mode</button> -->
+        <button type="button" id="darkModeToggle" class="dark-mode-toggle" aria-label="Toggle Dark Mode">
+            <i class="fas fa-moon"></i> <!-- Example icon for dark mode -->
+        </button>
+
+       
+
+
+        <!-- <button type="button" id="logoutButton" class="logout">Log out</button> -->
+        <button type="button" id="logoutButton" class="logout">
+            <i class="fas fa-sign-out-alt"></i> <!-- Logout icon -->
+        </button>
+        
+        
+    </div>
+
+   
+
+
+    <script>  
+    // Function to toggle dark mode
+    function toggleDarkMode() {
+        document.body.classList.toggle('dark-mode');
+
+        // Save the current mode to localStorage
+        if (document.body.classList.contains('dark-mode')) {
+            localStorage.setItem('theme', 'dark');
+        } else {
+            localStorage.setItem('theme', 'light');
+        }
+    }
+
+    // Check localStorage for the saved theme on page load
+    window.onload = function() {
+        const savedTheme = localStorage.getItem('theme');
+
+        // If the saved theme is 'dark', apply dark mode
+        if (savedTheme === 'dark') {
+            document.body.classList.add('dark-mode');
+        }
+    };
+
+    // Add event listener to the button
+    document.getElementById('darkModeToggle').addEventListener('click', toggleDarkMode);
+
+    </script>
+    </main>
+</body>
+</html>
