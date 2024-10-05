@@ -7,11 +7,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $job_description = $_POST['job_description'];
     $time_posted = date('Y-m-d H:i:s');
 
-    $sql = "INSERT INTO your_table_name (job_title, job_description, time_posted) VALUES (:job_title, :job_description, :time_posted)";
-    $stmt = $dbh->prepare($sql);
-    $stmt->execute(['job_title' => $job_title, 'job_description' => $job_description, 'time_posted' => $time_posted]);
+    $sql = "INSERT INTO job_posting VALUES ($job_title, $job_description, $time_posted)";
 
-    echo "New record created successfully<br>";
+    if ($connection->query($sql) === TRUE) {
+        echo "record inserted successfully";
+    } else {
+        echo "Error: " . $sql . "<br>" . $connection->error;
+    }   
+    mysqli_close($conn);
 }
-
 ?>

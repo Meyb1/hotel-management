@@ -2,11 +2,16 @@
 $hostname = 'localhost'; 
 $username = 'root';
 $password = '';
+$databasename = 'paradise_hotel';
 
 try {
-    $dbh = new PDO("mysql:host=$hostname;dbname=railway", $username, $password);
-    echo 'Connected to database<br>';
-} catch (PDOException $e) {
-    echo 'Connection failed: ' . $e->getMessage();
+    $connection = new msqli($hostname, $username, $password, $databasename);
+    if($connectionb->connect_error){
+        die("Connection failed: "
+        . $connection -> connection_error);
+    }
+} catch (Exception $e){
+    $error = $e->getMessage();
+    echo $error;
 }
 ?>
