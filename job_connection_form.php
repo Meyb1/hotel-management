@@ -11,8 +11,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $response = [
             'status' => 'success',
             'job' => [
-                'title' => $job_title,
-                'description' => $job_description,
+                'id' => $connection->insert_id,
+                'job_title' => $job_title,
+                'job_description' => $job_description,
                 'time_posted' => $time_posted,
             ],
         ];

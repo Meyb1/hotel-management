@@ -19,14 +19,7 @@ window.onload = function () {
         .then(response => response.json())
         .then(jobs => {
             jobs.forEach(job => {
-                const jobCard = document.createElement('div');
-                jobCard.classList.add('job-card');
-                jobCard.innerHTML = `
-                    <h3>${job.job_title}</h3>
-                    <p>${job.job_description}</p>
-                    <small>Posted on: ${job.time_posted}</small>
-                `;
-                document.getElementById('jobsList').appendChild(jobCard);
+                addJobCard(job);
             });
         })
         .catch(error => console.error('Error fetching jobs:', error));
@@ -44,17 +37,71 @@ document.getElementById('jobPostingForm').addEventListener('submit', function(ev
     .then(response => response.json())
     .then(data => {
         if (data.status === 'success') {
-            const jobCard = document.createElement('div');
-            jobCard.classList.add('job-card');
-            jobCard.innerHTML = `
-                <h3>${data.job.title}</h3>
-                <p>${data.job.description}</p>
-                <small>Posted on: ${data.job.time_posted}</small>
-            `;
-            document.getElementById('jobsList').prepend(jobCard); 
+            addJobCard(data.job);
         } else {
             alert(data.message);
         }
     })
     .catch(error => console.error('Error:', error));
 });
+
+function addJobCard(job) {
+    const jobCard = document.createElement('div');
+    jobCard.classList.add('job-card');
+    jobCard.setAttribute('data-id', job.id);
+    jobCard.innerHTML = `
+        <h3>${job.job_title}</h3>
+        <p>${job.job_description}</p>
+        <small>Posted on: ${job.time_posted}</small>
+        <button onclick="editJob(${job.id})">Edit</button>
+        <button onclick="deleteJob(${job.id})">Delete</button>
+    `;
+    document.getElementById('jobsList').prepend(jobCard); 
+}
+
+function editJob(id) {
+    const jobCard = document.querySelector(`[data-id="${id}"]`);
+    const title = prompt("Enter new job title:", jobCard.querySelector("h3").textContent);
+    const description = prompt("Enter new job description:", jobCard.querySelector("p").textContent);
+
+    if (title && description) {
+        fetch('job_edit_connection.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ id, title, description })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === 'success') {
+                jobCard.querySelector("h3").textContent = title;
+                jobCard.querySelector("p").textContent = description;
+            } else {
+                alert(data.message);
+            }
+        })
+        .catch(error => console.error('Error:', error));
+    }
+}
+
+function deleteJob(id) {
+    if (confirm("Are you sure you want to delete this job?")) {
+        fetch('job_delete_connection.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ id })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === 'success') {
+                document.querySelector(`[data-id="${id}"]`).remove();
+            } else {
+                alert(data.message);
+            }
+        })
+        .catch(error => console.error('Error:', error));
+    }
+}
