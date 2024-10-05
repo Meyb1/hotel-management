@@ -1,7 +1,7 @@
 <?php
 $hostname = 'localhost'; 
 $username = 'root';
-$password = 'root';
+$password = '';
 $databasename = 'paradise_hotel';
 try {
     $connection = new mysqli($hostname, $username, $password, $databasename);

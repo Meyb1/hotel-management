@@ -9,6 +9,7 @@ function toggleDarkMode() {
 
 window.onload = function () {
     const savedTheme = localStorage.getItem("theme");
+
     if (savedTheme === "dark") {
         document.body.classList.add("dark-mode");
     }
@@ -34,8 +35,8 @@ window.onload = function () {
 document.getElementById("darkModeToggle").addEventListener("click", toggleDarkMode);
 
 document.getElementById('jobPostingForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    const formData = new FormData(this);
+    event.preventDefault(); 
+    const formData = new FormData(this); 
     fetch('job_connection_form.php', {
         method: 'POST',
         body: formData,
@@ -50,7 +51,7 @@ document.getElementById('jobPostingForm').addEventListener('submit', function(ev
                 <p>${data.job.description}</p>
                 <small>Posted on: ${data.job.time_posted}</small>
             `;
-            document.getElementById('jobsList').prepend(jobCard);
+            document.getElementById('jobsList').prepend(jobCard); 
         } else {
             alert(data.message);
         }
