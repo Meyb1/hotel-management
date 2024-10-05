@@ -1,6 +1,10 @@
 <?php
 session_start();
 include 'connection.php';
+if (isset($_SESSION['username'])) {
+    header('Location: maindashboard.php');
+    exit();
+}
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $conn->real_escape_string($_POST['username']);
@@ -12,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $user = $result->fetch_assoc();
         if (password_verify($password, $user['password'])) {
             $_SESSION['username'] = $username;
-            header('Location: main_dashboard.php');
+            header('Location: maindashboard.php');
             exit();
         } else {
             $error = 'Invalid credentials';
