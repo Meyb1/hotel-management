@@ -16,3 +16,28 @@ window.onload = function () {
 document
   .getElementById("darkModeToggle")
   .addEventListener("click", toggleDarkMode);
+
+document.getElementById('jobPostingForm').addEventListener('submit', function(event) {
+  event.preventDefault(); 
+  const formData = new FormData(this); 
+  fetch('job_connection_form.php', {
+      method: 'POST',
+      body: formData,
+  })
+  .then(response => response.json())
+  .then(data => {
+      if (data.status === 'success') {
+          const jobCard = document.createElement('div');
+          jobCard.classList.add('job-card');
+          jobCard.innerHTML = `
+              <h3>${data.job.title}</h3>
+              <p>${data.job.description}</p>
+              <small>Posted on: ${data.job.time_posted}</small>
+          `;
+          document.getElementById('jobsList').prepend(jobCard); 
+      } else {
+          alert(data.message);
+      }
+  })
+  .catch(error => console.error('Error:', error));
+});

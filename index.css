@@ -335,17 +335,11 @@ button.delete:hover {
   background-color: #da190b;
 }
 
-.job-post-container {
+.loob {
   padding-top: 40px;
   width: 900px;
 }
-.job-card {
-  border: 1px solid #ccc;
-  padding: 10px;
-  margin: 10px 0;
-  border-radius: 5px;
-  background-color: #f9f9f9;
-}
+
 body.dark-mode .dark-mode-toggle:hover {
   background-color: #007a00;
   color: rgb(255, 255, 255);
@@ -400,4 +394,80 @@ body.dark-mode .dark-mode-toggle {
 
 body.dark-mode .top-nav .toggle {
   color: #00b400;
+}
+
+
+
+.job-card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+.job-posting-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.job-posting-container h1 {
+  text-align: center;
+}
+
+.job-posting-container form {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  gap: 10px;
+}
+
+.job-title-container,
+.job-description-container {
+  width: 100%;
+}
+
+textarea {
+  height: 120%;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #5c6ac4;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #4a56a0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .job-posting-container {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .job-posting-container {
+    width: 100%;
+    padding: 5px;
+  }
 }

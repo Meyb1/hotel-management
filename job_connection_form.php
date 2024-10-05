@@ -7,22 +7,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $time_posted = date('Y-m-d H:i:s');
 
     $sql = "INSERT INTO job_posting (job_title, job_description, time_posted) VALUES ('$job_title', '$job_description', '$time_posted')";
-
     if ($connection->query($sql) === TRUE) {
-        // Return a JSON response with success
-        echo json_encode([
-            "success" => true,
-            "job_title" => $job_title,
-            "job_description" => $job_description,
-            "time_posted" => $time_posted
-        ]);
+        $response = [
+            'status' => 'success',
+            'job' => [
+                'title' => $job_title,
+                'description' => $job_description,
+                'time_posted' => $time_posted,
+            ],
+        ];
+        echo json_encode($response); 
     } else {
-        // Return a JSON response with error
-        echo json_encode([
-            "success" => false,
-            "error" => $connection->error
-        ]);
-    }   
+        $response = [
+            'status' => 'error',
+            'message' => "Error: " . $sql . "<br>" . $connection->error,
+        ];
+        echo json_encode($response); 
+    }
 
     $connection->close();
 }

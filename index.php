@@ -6,7 +6,8 @@
     <title>FINANCE PROTOTYPE</title>
     <?php include 'header.php'; ?>
 </head>
-<body class="light-mode">
-    <script src="index.js"></script>
+<body class="light-mode"> 
+   
+<script src="index.js"></script>
 </body>
 </html>

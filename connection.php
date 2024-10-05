@@ -3,7 +3,6 @@ $hostname = 'localhost';
 $username = 'root';
 $password = '';
 $databasename = 'paradise_hotel';
-
 try {
     $connection = new mysqli($hostname, $username, $password, $databasename);
     if ($connection->connect_error) { 
