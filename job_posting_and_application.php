@@ -9,12 +9,13 @@
 <body class="light-mode"> 
     <div class="container">
         <h1>Jobs</h1>
-        <form method="POST" action="job_insert_connection.ph">
-            <input type="text" name="job_title" for="job_title" placeholder="Job Title" required>
-            <textarea name="job_description" for="job_description" placeholder="Job Description" required></textarea>
+        <form method="POST" action="job_connection_form.php">
+            <input type="text" name="job_title" placeholder="Job Title" required>
+            <textarea name="job_description" placeholder="Job Description" required></textarea>
             <button type="submit">Post Job</button>
         </form>
         <a href="index.php">Back to Home</a>
     </div>
 <script src="index.js"></script>
+</body>
 </html>
