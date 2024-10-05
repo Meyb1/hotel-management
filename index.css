@@ -20,7 +20,7 @@ body.dark-mode {
   padding-right: 20px;
   padding-bottom: 10px;
   font-family: Arial, Helvetica, sans-serif;
-  line-height: 1;
+  line-height: 1; /* Adjust line height to reduce spacing */
 }
 
 body.dark-mode .logopos {
@@ -162,15 +162,15 @@ body.dark-mode .top:after {
 }
 
 .dropdown {
-  display: none;
-  position: fixed;
-  top: 55px;
-  left: 0;
-  right: 0;
+  display: none; /* Initially hidden */
+  position: fixed; /* Position relative to the viewport */
+  top: 55px; /* Align below the top-nav */
+  left: 0; /* Align to the left edge of the screen */
+  right: 0; /* Align to the right edge of the screen */
   background-color: #e5e4e2;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   padding: 20px;
-  z-index: 1000;
+  z-index: 1000; /* Ensure it overlays other elements */
   color: black;
   transition: opacity 0.3s ease;
 }
@@ -229,7 +229,7 @@ body.dark-mode .dropdown-column a {
 }
 
 body.dark-mode .dropdown-column a:hover {
-  color: #0d74da;
+  color: #0d74da; /* Consistent hover color for dark mode */
 }
 
 .dropdown::after {
@@ -250,38 +250,39 @@ body.dark-mode .labelsadropdown {
   color: white;
 }
 
+/* Styling the select element to align with other links in the dropdown */
 .styled-select {
   width: 100%;
   padding: 10px 15px;
   font-size: 16px;
-  border: 2px solid #2e7d32;
+  border: 2px solid #2e7d32; /* Dark Green Border */
   border-radius: 5px;
-  background-color: #e8f5e9;
-  color: #2e7d32;
+  background-color: #e8f5e9; /* Light Green Background */
+  color: #2e7d32; /* Dark Green Text */
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
   cursor: pointer;
   transition: border-color 0.3s, box-shadow 0.3s;
-  margin-bottom: 12px;
+  margin-bottom: 12px; /* Match spacing with the links */
 }
 
 body.dark-mode .styled-select {
   background-color: #333;
-  color: white;
-  border-color: white;
+  color: white; /* Consistent color in dark mode */
+  border-color: white; /* Border color for dark mode */
 }
 
 .styled-select:hover,
 .styled-select:focus {
-  border-color: #1b5e20;
-  box-shadow: 0 0 5px rgba(0, 128, 0, 0.5);
+  border-color: #1b5e20; /* Darker Green on Focus */
+  box-shadow: 0 0 5px rgba(0, 128, 0, 0.5); /* Green Shadow on Focus */
 }
 
 .styled-select option {
   padding: 8px;
-  background-color: #ffffff;
-  color: #2e7d32;
+  background-color: #ffffff; /* Option Background */
+  color: #2e7d32; /* Option Text Color */
 }
 
 .styled-select option:hover {
@@ -294,10 +295,11 @@ body.dark-mode .styled-select option {
 }
 
 .styled-select:hover {
-  border-color: #1b5e20;
-  box-shadow: 0 0 5px rgba(0, 128, 0, 0.3);
+  border-color: #1b5e20; /* Darker Green on Hover */
+  box-shadow: 0 0 5px rgba(0, 128, 0, 0.3); /* Green Shadow on Hover */
 }
 
+/* Dark mode for buttons */
 button {
   padding: 0.5rem 1rem;
   border: none;
@@ -363,13 +365,52 @@ body.dark-mode .dark-mode-toggle {
   color: black;
 }
 
-/* Job Posting Styles */
+@media (max-width: 768px) {
+  .top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dropdown {
+    position: static;
+    width: 100%;
+  }
+
+  .dropdown-column {
+    width: 100%;
+    float: none;
+    margin-bottom: 20px;
+  }
+
+  .top-nav ul {
+    gap: 5px;
+    flex-direction: column;
+  }
+}
+
+.top-nav .toggle {
+  cursor: pointer;
+}
+
+body.dark-mode .top-nav .toggle {
+  color: #00b400;
+}
+
+
+
+.job-card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
 .job-posting-container {
   display: flex;
   flex-direction: column;
-  width: 100%; /* Set width to take up the full width of its container */
-  max-width: 800px; /* Set a maximum width for better readability */
-  margin: 0 auto; /* Center the container horizontally */
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
   padding: 20px;
   box-sizing: border-box;
 }
@@ -391,7 +432,7 @@ body.dark-mode .dark-mode-toggle {
 }
 
 textarea {
-  height: 120%; /* Set the height of the textarea to be 20% greater than its default */
+  height: 120%;
 }
 
 input[type="text"],
@@ -403,3 +444,30 @@ textarea {
   box-sizing: border-box;
 }
 
+button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #5c6ac4;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #4a56a0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .job-posting-container {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .job-posting-container {
+    width: 100%;
+    padding: 5px;
+  }
+}
