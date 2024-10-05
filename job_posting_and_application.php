@@ -6,6 +6,8 @@
     <title>FINANCE PROTOTYPE</title>
     <?php include 'header.php'; ?>
     <link rel="stylesheet" href="index.css"> 
+    <link rel="stylesheet" href="darkmode.css"> 
+    <link rel="stylesheet" href="components.css"> 
 </head>
 <body class="light-mode"> 
     <div class="job-posting-container">
