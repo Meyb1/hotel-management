@@ -1,14 +1,12 @@
 <?php
-$hostname = 'localhost';
+$hostname = 'localhost'; 
 $username = 'root';
 $password = '';
 
 try {
-    $dbh = new PDO("mysql:host=$hostname;dbname=mysql", $username, $password);
-    echo 'Connected to database';
-    }
-catch(PDOException $e)
-    {
-    echo $e->getMessage();
-    }
+    $dbh = new PDO("mysql:host=$hostname;dbname=railway", $username, $password);
+    echo 'Connected to database<br>';
+} catch (PDOException $e) {
+    echo 'Connection failed: ' . $e->getMessage();
+}
 ?>
