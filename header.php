@@ -1,6 +1,6 @@
 <head>
     <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
 </head>
 <div class="top-nav">
     <ul>
@@ -31,7 +31,7 @@
 
                 <div class="dropdown-column">
                     <h3>Recruitment</h3>
-                    <a href="job_postings.php">Job Posting & Application</a>
+                    <a href="job_posting_and_application.php">Job Posting & Application</a>
                     <a href="#">Recruitment and Onboarding</a>
                     <a href="#">Employee Documentation</a>
                     <a href="#">Training and Development</a>
