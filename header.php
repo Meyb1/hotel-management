@@ -34,7 +34,7 @@
                 <div class="dropdown-column">
                     <h3>Recruitment</h3>
                     <a href="job_posting_and_application.php">Job Posting & Application</a>
-                    <a href="#">Recruitment and Onboarding</a>
+                    <a href="main_dashboard.php">Recruitment and Onboarding</a>
                     <a href="#">Employee Documentation</a>
                     <a href="#">Training and Development</a>
                     <a href="#">Analytics and Reporting</a>
@@ -114,7 +114,7 @@
         <i class="fas fa-moon"></i> 
     </button>
 
-    <button type="button" id="logoutButton" class="logout">
+    <button type="button" id="logoutButton" class="logout" onclick="window.location.href='logout.php'">
         <i class="fas fa-sign-out-alt"></i>
     </button>
 </div>
