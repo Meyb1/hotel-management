@@ -2,7 +2,7 @@
 session_start();
 include 'connection.php';
 if (isset($_SESSION['username'])) {
-    header('Location: maindashboard.php');
+    header('Location: main_dashboard.php');
     exit();
 }
 
