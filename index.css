@@ -468,8 +468,3 @@ button[type="submit"]:hover {
   }
 }
 
-body.dark-mode .job-card {
-  border: 1px solid #444;
-  background-color: #2c2c2c;
-  color: white;
-}
