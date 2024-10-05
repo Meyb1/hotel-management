@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FINANCE PROTOTYPE</title>
-    <?php include 'header.php'; ?>
+    <?php include 'partials/header.php'; ?>
 </head>
-<body class="light-mode"> 
-   
-<script src="index.js"></script>
+<body class="light-mode">
+    <script src="js/index.js"></script>
 </body>
 </html>
