@@ -14,7 +14,7 @@
             <textarea name="job_description" placeholder="Job Description" required></textarea>
             <button type="submit">Post Job</button>
         </form>
-        <div id="jobsList"></div>
+        <div id="jobsList" class="jobs-list"></div>
     </div>
     <script src="index.js"></script>
 </body>
