@@ -395,9 +395,6 @@ body.dark-mode .dark-mode-toggle {
 body.dark-mode .top-nav .toggle {
   color: #00b400;
 }
-
-
-
 .job-card {
   border: 1px solid #ccc;
   padding: 10px;
@@ -414,7 +411,6 @@ body.dark-mode .top-nav .toggle {
   padding: 20px;
   box-sizing: border-box;
 }
-
 .job-posting-container h1 {
   text-align: center;
 }
